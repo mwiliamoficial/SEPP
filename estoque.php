@@ -1,3 +1,9 @@
+<?php
+
+	$acao = 'recuperar';
+	require 'produto_controller.php';
+
+?>
 <html>
 	<head>
 		<meta charset="utf-8" />
@@ -59,9 +65,19 @@
 							<tr>
 								<th>Produto</th>
 								<th>Fornecedor</th>
-								<th>Quantidade</th>
+								<th>Valor</th>
 								<th></th>
 							</tr>
+
+							<?php foreach($produtos as $indice => $produto)	{ ?>
+								<tr>
+									<td><?= $produto->nome_produto ?></td>
+									<td><?= $produto->fornecedor ?></td>
+									<td><?= $produto->valor ?></td>
+									<td></td>
+								</tr>
+							<?php } ?>
+
 						</thead>
 					</table>
 				</div>
